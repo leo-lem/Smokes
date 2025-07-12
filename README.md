@@ -24,8 +24,9 @@ A minimalist iOS app to track daily cigarette consumption and visualize progress
 
 ## 🛠 Setup
 
-1. Clone the repo
-2. Open in Xcode and build
+1. Clone the repo.
+2.	Open Smokes.xcodeproj in Xcode.
+3.	Build and run on iOS 18+.
 
 ---
 
