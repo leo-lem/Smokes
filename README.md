@@ -4,7 +4,7 @@ A minimalist iOS app to track daily cigarette consumption and visualize progress
 
 ## 📌 Overview
 
-**Smokes** is a SwiftUI-based habit tracker for iOS, focused on simplicity and data-driven motivation. It integrates with Firebase to store consumption logs and generate insightful charts that help users reduce or quit smoking.
+**Smokes** is a SwiftUI-based smoking habit tracker for iOS, focused on simplicity and data-driven motivation.
 
 <a href="https://apps.apple.com/de/app/smokes/id6446227741?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1679875200" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
 
@@ -30,4 +30,4 @@ A minimalist iOS app to track daily cigarette consumption and visualize progress
 
 ---
 
-👤 Built by [@Leo-Lem](https://github.com/leo-lem)
+👤 Built by [@Leo-Lem](https://github.com/leo-lem) — passionate about clean code, automation, and mobile UX.
