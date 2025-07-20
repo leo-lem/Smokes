@@ -3,7 +3,7 @@ name: Deploy static content to Pages
 on:
   push:
     branches: ["main"]
-    paths: ["resources/webpage/**"]
+    paths: ["resource/webpage/**"]
   workflow_dispatch:
 
 permissions:
@@ -26,6 +26,6 @@ jobs:
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: "resources/webpage"
+          path: "resource/webpage"
       - uses: actions/deploy-pages@v4
         id: deployment
