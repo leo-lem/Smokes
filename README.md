@@ -1,5 +1,7 @@
 # Smokes
 
+[![Deploy Marketing Page](https://github.com/leo-lem/Smokes/actions/workflows/marketing.yml/badge.svg)](https://github.com/leo-lem/Smokes/actions/workflows/marketing.yml)
+
 A minimalist iOS app to track daily cigarette consumption and visualize progress over time.
 
 ## 📌 Overview
