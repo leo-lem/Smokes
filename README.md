@@ -1,35 +1,42 @@
 # Smokes
 
-[![Deploy Marketing Page](https://github.com/leo-lem/Smokes/actions/workflows/marketing.yml/badge.svg)](https://github.com/leo-lem/Smokes/actions/workflows/marketing.yml)
+[![Download on the App Store](https://img.shields.io/badge/App%20Store-Download-blue?logo=apple)](https://apps.apple.com/de/app/smokes/id6446227741)
+[![Get Beta Access](https://img.shields.io/badge/TestFlight-Beta_Access-007AFF?logo=apple)](https://testflight.apple.com/join/juBfGq97)
+[![App Store Connect](https://img.shields.io/badge/App%20Store%20Connect-Dashboard-green?logo=apple)](https://appstoreconnect.apple.com/apps/6446227741/distribution)
 
-A minimalist iOS app to track daily cigarette consumption and visualize progress over time.
+**Smokes** is a lightweight, privacy-first iOS app to help you track your smoking habits and reflect on your behavior. Whether you're cutting back or building awareness, Smokes helps you log and review your consumption patterns with a clean, focused interface — and all data stays securely on your device.
 
-## 📌 Overview
+## ✨ Features
 
-**Smokes** is a SwiftUI-based smoking habit tracker for iOS, focused on simplicity and data-driven motivation.
+- 🌀 One-tap logging
+- 📊 Rich daily, weekly, and monthly charts
+- 🌓 Native dark mode support
+- 📤 Local data export
+- ⚙️ Lightweight, on-device-only architecture
+- 🧪 Comprehensive test coverage with Swift Testing
 
-<a href="https://apps.apple.com/de/app/smokes/id6446227741?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1679875200" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
+## 🧱 Architecture
 
-## 🚀 Features
+Smokes is designed with simplicity and reliability in mind:
 
-- Log cigarettes with one tap
-- Daily, weekly, and monthly analytics charts
-- Smooth animations and haptics
-- Dark mode support
+- **Composable Architecture** for modular, testable state management
+- **SwiftUI** throughout
+- **Charts API** for efficient and responsive visualizations
+- **Swift Testing framework** for unit and performance tests
+- Clear separation of concerns between state, UI, and dependencies
 
-## 🧠 Tech Stack
+## 🔧 Tech Stack
 
-- SwiftUI
-- Charts API
-- Composable Architecture
-- Haptics & Animations
+- **SwiftUI** + **Composable Architecture**
+- **Charts** for native data visualizations
+- **Swift Testing** for comprehensive test coverage
 
 ## 🛠 Setup
 
 1. Clone the repo.
-2.	Open Smokes.xcodeproj in Xcode.
-3.	Build and run on iOS 18+.
+2. Open `Smokes.xcodeproj` in Xcode.
+3. Run on a device (iOS 18+ recommended).
 
 ---
 
-👤 Built by [@Leo-Lem](https://github.com/leo-lem) — passionate about clean code, automation, and mobile UX.
+Made with care by [@Leo‑Lem](https://github.com/leo-lem) — passionate about clean code, thoughtful UX, and indie dev.
