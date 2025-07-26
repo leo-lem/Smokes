@@ -1,7 +1,31 @@
 {
   "images" : [
     {
-      "filename" : "vectorpaint-1024.png",
+      "filename" : "Exported PNG image 6.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Exported PNG image 1.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "tinted"
+        }
+      ],
+      "filename" : "Exported PNG image 5.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
