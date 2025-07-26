@@ -9,8 +9,8 @@
 	<key>MarketingUrl</key>
 	<string>https://smokes.leolem.dev</string>
 	<key>PrivacyUrl</key>
-	<string>https://smokes.leolem.dev/privacy</string>
+	<string>https://leolem.dev/privacy</string>
 	<key>SupportUrl</key>
-	<string>https://github.com/Leo-Lem/Smokes</string>
+	<string>https://leolem.dev</string>
 </dict>
 </plist>
