@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "34A41B1B-DFCC-4BCB-B236-424C6F550D3A",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "FactsAPITests",
+        "name" : "FactsAPITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "FactsAPIClientTests",
+        "name" : "FactsAPIClientTests"
+      }
+    }
+  ],
+  "version" : 1
+}
