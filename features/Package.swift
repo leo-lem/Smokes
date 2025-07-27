@@ -11,8 +11,7 @@ let package = Package(
     .package(url: "https://github.com/liamnichols/xcstrings-tool-plugin.git", from: "0.1.0"),
     .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", from: "0.1.0"),
     .package(path: "../library"),
-    .package(path: "../extensions"),
-    .package(path: "../facts")
+    .package(path: "../extensions")
   ]
 )
 
@@ -20,6 +19,7 @@ let tca = Target.Dependency.product(name: "ComposableArchitecture", package: "sw
 let xcstrings = Target.Dependency.product(name: "XCStringsToolPlugin", package: "xcstrings-tool-plugin")
 
 let ext = Target.Dependency.product(name: "Extensions", package: "extensions")
+let swiftuiExt = Target.Dependency.product(name: "SwiftUIExtensions", package: "extensions")
 let comps = Target.Dependency.product(name: "SwiftUIComponents", package: "library")
 let types = Target.Dependency.product(name: "Types", package: "library")
 let calc = Target.Dependency.product(name: "Calculate", package: "library")
@@ -34,10 +34,10 @@ let libs: [Target] = [
   ], plugins: [lint]),
   .target(name: "Dashboard", dependencies: [tca, ext, comps, types, calc, xcstrings], plugins: [lint]),
   .target(name: "History", dependencies: [tca, ext, comps, types, calc, xcstrings], plugins: [lint]),
-  .target(name: "Statistic", dependencies: [tca, ext, comps, types, calc, xcstrings], plugins: [lint]),
-  .target(name: "Fact", dependencies: [tca, ext, xcstrings, facts], plugins: [lint]),
-  .target(name: "Info", dependencies: [tca, ext, xcstrings], plugins: [lint]),
-  .target(name: "Transfer", dependencies: [tca, ext, comps, types, code, xcstrings], plugins: [lint]),
+  .target(name: "Statistic", dependencies: [tca, ext, swiftuiExt, comps, types, calc, xcstrings], plugins: [lint]),
+  .target(name: "Fact", dependencies: [tca, ext, xcstrings], plugins: [lint]),
+  .target(name: "Info", dependencies: [tca, ext, swiftuiExt, xcstrings], plugins: [lint]),
+  .target(name: "Transfer", dependencies: [tca, ext, swiftuiExt, comps, types, code, xcstrings], plugins: [lint]),
 ]
 
 package.targets = libs + [

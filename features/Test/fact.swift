@@ -10,7 +10,7 @@ import Testing
 struct FactTest {
   @Test
   func appear() async throws {
-    let store = TestStore(initialState: Fact.State(), reducer: Fact.init) { deps in
+    let store = TestStore(initialState: Facts.State(), reducer: Facts.init) { deps in
       deps.continuousClock = ImmediateClock()
       deps.factsAPIClient = .testValue
     }
@@ -25,7 +25,7 @@ struct FactTest {
   @Test
   func countdown() async throws {
     let clock = TestClock()
-    let store = TestStore(initialState: Fact.State(progress: 0.90), reducer: Fact.init) { deps in
+    let store = TestStore(initialState: Facts.State(progress: 0.90), reducer: Facts.init) { deps in
       deps.continuousClock = clock
       deps.dismiss = .init { #expect(true) }
     }

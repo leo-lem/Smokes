@@ -14,6 +14,7 @@
 - 📤 Local data export
 - ⚙️ Lightweight, on-device-only architecture
 - 🧪 Comprehensive test coverage with Swift Testing
+- 🎓 Daily motivational facts (via serverless API)
 
 ## 🧱 Architecture
 
@@ -30,6 +31,7 @@ Smokes is designed with simplicity and reliability in mind:
 - **SwiftUI** + **Composable Architecture**
 - **Charts** for native data visualizations
 - **Swift Testing** for comprehensive test coverage
+- **Vercel Serverless Function** for fact delivery
 
 ## 🛠 Setup
 

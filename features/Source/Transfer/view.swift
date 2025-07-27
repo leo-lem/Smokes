@@ -4,6 +4,7 @@ import Code
 import ComposableArchitecture
 import Extensions
 import SwiftUIComponents
+import SwiftUIExtensions
 
 @ViewAction(for: Transfer.self)
 public struct TransferView: View {
@@ -85,6 +86,10 @@ fileprivate extension Encoding {
 }
 
 #Preview {
-  TransferView(store: Store(initialState: Transfer.State(), reducer: Transfer.init))
-    .previewInSheet()
+  @Previewable @State var isPresented = false
+
+  Toggle("Is presented", isOn: $isPresented)
+    .sheet(isPresented: $isPresented) {
+      TransferView(store: Store(initialState: Transfer.State(), reducer: Transfer.init))
+    }
 }

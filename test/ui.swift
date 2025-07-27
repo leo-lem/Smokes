@@ -55,7 +55,7 @@ import XCTest
 
   func testViewingFact() async throws {
     app/*@START_MENU_TOKEN@*/.buttons["lightbulb"]/*[[".buttons[\"Fact\"]",".buttons[\"lightbulb\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-    XCTAssertTrue(app.staticTexts["Smokes' Facts"].exists)
+    XCTAssertTrue(app.staticTexts["Smokes"].exists)
     app/*@START_MENU_TOKEN@*/.buttons["chevron.forward.to.line"]/*[[".buttons[\"skip\"]",".buttons[\"chevron.forward.to.line\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
     XCTAssertTrue(app/*@START_MENU_TOKEN@*/.buttons["lightbulb"]/*[[".buttons[\"Fact\"]",".buttons[\"lightbulb\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists)
   }
@@ -63,7 +63,7 @@ import XCTest
   func testViewingInfo() async throws {
     app/*@START_MENU_TOKEN@*/.buttons["info"]/*[[".buttons[\"About\"]",".buttons[\"info\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
     XCTAssertTrue(app.staticTexts["Smokes"].exists)
-    XCTAssertTrue(app.collectionViews/*@START_MENU_TOKEN@*/.staticTexts["Webpage"]/*[[".cells",".buttons[\"Webpage\"].staticTexts[\"Webpage\"]",".staticTexts[\"Webpage\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.exists)
+    XCTAssertTrue(app.collectionViews.staticTexts["Privacy Policy"].exists)
 
   }
 

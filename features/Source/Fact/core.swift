@@ -2,16 +2,15 @@
 
 import ComposableArchitecture
 import Extensions
-import FactsAPIClient
 import Foundation
 
-@Reducer public struct Fact {
+@Reducer public struct Facts {
   @ObservableState public struct State: Equatable, Sendable {
-    @Shared var fact: String
+    @Shared var fact: Fact
     var progress = 0.0
 
-    public init(fact: String? = nil, progress: Double = 0.0) {
-      _fact = Shared(wrappedValue: fact ?? String(localizable: .comingSoon), .appStorage("smokes_fact"))
+    public init(fact: Fact? = nil, progress: Double = 0.0) {
+      _fact = Shared(value: fact ?? Fact(fact: String(localizable: .comingSoon), source: "Smokes"))
       self.progress = progress
     }
   }

@@ -1,0 +1,11 @@
+{
+  "name": "smokes-api",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@vercel/node": "^5.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

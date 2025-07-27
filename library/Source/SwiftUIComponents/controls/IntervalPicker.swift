@@ -113,13 +113,13 @@ private extension View {
 }
 
 #Preview {
-  Binding.Preview(Interval.alltime) { binding in
-    IntervalPicker(
-      selection: binding,
-      bounds: .fromTo(.init(start: .init(timeIntervalSinceReferenceDate: 9_999_999), duration: 99_999_999))
-    )
-    .buttonStyle(.borderedProminent)
-    .labelStyle(.iconOnly)
-    .padding()
-  }
+  @Previewable @State var selected = Interval.alltime
+
+  IntervalPicker(
+    selection: $selected,
+    bounds: .fromTo(.init(start: .init(timeIntervalSinceReferenceDate: 9_999_999), duration: 99_999_999))
+  )
+  .buttonStyle(.borderedProminent)
+  .labelStyle(.iconOnly)
+  .padding()
 }

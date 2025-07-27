@@ -8,7 +8,7 @@ extension FactsAPIClient: DependencyKey {
   )
 
   public static let testValue: Self = FactsAPIClient(
-    fetch: { _ in return "This is an example fact!" }
+    fetch: { _ in return Fact(fact: "This is an example fact!", source: "Smokes") }
   )
 }
 

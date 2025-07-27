@@ -4,10 +4,9 @@ import struct Dependencies.Dependency
 import Foundation
 
 public extension FactsAPIClient {
-  static func fetch(_ url: URL) async throws -> String {
+  static func fetch(_ url: URL) async throws -> Fact {
     @Dependency(\.urlSession) var session
-
-    let url = url.appendingPathComponent(Locale.current.identifier)
+    let decoder = JSONDecoder()
 
     let (data, response): (Data, URLResponse)
     do {
@@ -24,10 +23,10 @@ public extension FactsAPIClient {
       throw Error.unexpected(response.statusCode, response)
     }
 
-    guard let fact = String(data: data, encoding: .utf8) else {
+    do {
+      return try decoder.decode(Fact.self, from: data)
+    } catch {
       throw Error.decoding(data)
     }
-
-    return fact
   }
 }

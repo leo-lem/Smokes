@@ -3,6 +3,7 @@
 import typealias ComposableArchitecture.StoreOf
 import Extensions
 import SwiftUI
+import SwiftUIExtensions
 
 public struct InfoView: View {
   public let store: StoreOf<Info>
@@ -46,16 +47,6 @@ public struct InfoView: View {
         .buttonStyle(.borderless)
         .scrollDisabled(true)
       }
-
-      Divider()
-
-      Section(.localizable(.credits)) {
-        VStack {
-          Text(.localizable(.developed(Bundle.main[string: "Creator"])))
-          Text(.localizable(.designed(Bundle.main[string: "Creator"])))
-        }
-        .font(.caption)
-      }
     }
     .padding()
     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -67,6 +58,10 @@ public struct InfoView: View {
 }
 
 #Preview {
-  InfoView(store: StoreOf<Info>(initialState: Info.State(), reducer: Info.init))
-    .previewInSheet()
+  @Previewable @State var isPresented = false
+
+  Toggle("Is presented", isOn: $isPresented)
+    .sheet(isPresented: $isPresented) {
+      InfoView(store: StoreOf<Info>(initialState: Info.State(), reducer: Info.init))
+    }
 }
