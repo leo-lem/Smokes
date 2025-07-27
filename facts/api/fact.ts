@@ -1,14 +1,15 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node'
-import facts from './_facts.json'
+import { readFile } from 'fs/promises'
 
 type Fact = {
-
   fact: string
   source: string
 }
 
-export default function handler(req: VercelRequest, res: VercelResponse) {
-  const random: Fact = facts[Math.floor(Math.random() * facts.length)]
-  res.setHeader('Access-Control-Allow-Origin', '*')
-  res.status(200).json(random)
+export async function GET(): Promise<Response> {
+  const filePath = new URL('./facts.json', import.meta.url).pathname
+  const data = await readFile(filePath, 'utf-8')
+  const facts: Fact[] = JSON.parse(data)
+
+  const random = facts[Math.floor(Math.random() * facts.length)]
+  return Response.json(random)
 }
