@@ -51,7 +51,7 @@ extension LoadableWithDescription where Content == AnyView {
     @ViewBuilder content: @escaping (V) -> CollectionContent
   ) where V: Collection {
     self.init(collection, description: description) {
-      AnyView(erasing: content($0).replaceWhenEmpty($0))
+      AnyView(erasing: content($0))
     }
   }
 

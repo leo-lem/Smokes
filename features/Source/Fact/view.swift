@@ -5,12 +5,12 @@ import Extensions
 import SwiftUI
 
 public struct FactView: View {
-  let store: StoreOf<Fact>
+  let store: StoreOf<Facts>
 
   public var body: some View {
     VStack {
       VStack {
-        Text(store.fact)
+        Text(store.fact.fact)
           .font(.headline)
           .multilineTextAlignment(.center)
           .minimumScaleFactor(0.7)
@@ -19,7 +19,7 @@ public struct FactView: View {
           .frame(maxWidth: 100, maxHeight: 2)
           .cornerRadius(2)
 
-        Text(.localizable(.title))
+        Text(store.fact.source)
           .font(.subheadline)
       }
       .frame(maxWidth: .infinity)
@@ -45,9 +45,9 @@ public struct FactView: View {
     .onAppear { store.send(.appear, animation: .default) }
   }
 
-  public init(store: StoreOf<Fact>) { self.store = store }
+  public init(store: StoreOf<Facts>) { self.store = store }
 }
 
 #Preview {
-  FactView(store: Store(initialState: Fact.State(), reducer: Fact.init))
+  FactView(store: Store(initialState: Facts.State(), reducer: Facts.init))
 }

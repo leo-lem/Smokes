@@ -1,0 +1,17 @@
+version: 2
+updates:
+  # For the Vercel API (npm)
+  - package-ecosystem: "npm"
+    directory: "/api"
+    schedule:
+      interval: "weekly"
+
+  # For Swift library packages
+  - package-ecosystem: "swift"
+    directory: "/features"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "swift"
+    directory: "/library"
+    schedule:
+      interval: "weekly"

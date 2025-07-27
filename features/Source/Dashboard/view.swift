@@ -3,6 +3,7 @@
 import ComposableArchitecture
 import Extensions
 import SwiftUIComponents
+import SwiftUIExtensions
 
 public struct DashboardView: View {
   @Bindable public var store: StoreOf<Dashboard>

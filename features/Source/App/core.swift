@@ -14,7 +14,7 @@ import Transfer
     var history: History.State
     var statistic: Statistic.State
 
-    @Presents var fact: Fact.State?
+    @Presents var fact: Facts.State?
     @Presents var info: Info.State?
     @Presents var transfer: Transfer.State?
 
@@ -24,7 +24,7 @@ import Transfer
       dashboard: Dashboard.State = Dashboard.State(),
       history: History.State = History.State(),
       statistic: Statistic.State = Statistic.State(),
-      fact: Fact.State? = nil,
+      fact: Facts.State? = nil,
       info: Info.State? = nil,
       transfer: Transfer.State? = nil,
       tab: Int = 1
@@ -43,7 +43,7 @@ import Transfer
     case dashboard(Dashboard.Action),
          history(History.Action),
          statistic(Statistic.Action),
-         fact(PresentationAction<Fact.Action>),
+         fact(PresentationAction<Facts.Action>),
          info(PresentationAction<Info.Action>),
          transfer(PresentationAction<Transfer.Action>)
 
@@ -68,7 +68,7 @@ import Transfer
       if case let .view(action) = action {
         switch action {
         case .factButtonTapped:
-          state.fact = Fact.State()
+          state.fact = Facts.State()
         case .infoButtonTapped:
           state.info = Info.State()
         case .transferButtonTapped:
@@ -79,7 +79,7 @@ import Transfer
 
       return .none
     }
-    .ifLet(\.$fact, action: \.fact) { Fact() }
+    .ifLet(\.$fact, action: \.fact) { Facts() }
     .ifLet(\.$info, action: \.info) { Info() }
     .ifLet(\.$transfer, action: \.transfer) { Transfer() }
   }
