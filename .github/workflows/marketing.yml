@@ -3,7 +3,7 @@ name: Deploy Marketing Page
 on:
   push:
     branches: ["main"]
-    paths: ["resource/web/**"]
+    paths: ["web/**"]
   workflow_dispatch:
 permissions:
   pages: write
@@ -14,4 +14,4 @@ jobs:
   deploy:
     uses: leo-lem/leo-lem/.github/workflows/deploy-pages.yml@main
     with:
-      path: resource/web
+      path: web
