@@ -1,6 +1,3 @@
-[submodule "facts"]
-	path = facts
-	url = https://github.com/Leo-Lem/SmokesFactsAPI.git
 [submodule "extensions"]
 	path = extensions
 	url = https://github.com/Leo-Lem/LeosSwift.git

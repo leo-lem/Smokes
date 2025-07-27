@@ -1,0 +1,12 @@
+# swiftpm
+.build
+Packages
+xcuserdata/
+DerivedData/
+.swiftpm/config/registries.json
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+.netrc
+
+# misc
+.DS_STORE
+Icon?
