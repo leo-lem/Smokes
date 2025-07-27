@@ -47,16 +47,6 @@ public struct InfoView: View {
         .buttonStyle(.borderless)
         .scrollDisabled(true)
       }
-
-      Divider()
-
-      Section(.localizable(.credits)) {
-        VStack {
-          Text(.localizable(.developed(Bundle.main[string: "Creator"])))
-          Text(.localizable(.designed(Bundle.main[string: "Creator"])))
-        }
-        .font(.caption)
-      }
     }
     .padding()
     .frame(maxWidth: .infinity, maxHeight: .infinity)
