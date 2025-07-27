@@ -9,8 +9,8 @@ let package = Package(
   dependencies: [
     .package(path: "../extensions"),
     .package(url: "https://github.com/pointfreeco/swift-dependencies.git", from: "1.0.0"),
-    .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", from: "0.1.0"),
-    .package(url: "https://github.com/liamnichols/xcstrings-tool-plugin.git", from: "0.1.0"),
+    .package(url: "https://github.com/liamnichols/xcstrings-tool-plugin.git", from: "1.0.0"),
+    .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", from: "0.1.0")
   ]
 )
 
