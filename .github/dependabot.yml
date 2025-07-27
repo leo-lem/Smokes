@@ -2,7 +2,7 @@ version: 2
 updates:
   # For the Vercel API (npm)
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/facts"
     schedule:
       interval: "weekly"
 

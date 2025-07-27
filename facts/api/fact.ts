@@ -2,6 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node'
 import facts from './_facts.json'
 
 type Fact = {
+
   fact: string
   source: string
 }

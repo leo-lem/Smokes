@@ -1,6 +1,7 @@
 {
   "name": "smokes-api",
   "private": true,
+  "type": "commonjs",
   "dependencies": {
     "@vercel/node": "^5.0.0"
   },

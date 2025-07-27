@@ -71,11 +71,6 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		6E8965DE2E362A5A00E8E6F6 /* api */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = api;
-			sourceTree = "<group>";
-		};
 		6E8965E82E362A5A00E8E6F6 /* web */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = web;
@@ -140,7 +135,6 @@
 				6ED3746B2D4F8535008586CC /* extensions */,
 				6EF802132D58A12900069BB1 /* resource */,
 				6ED374D12D4F8565008586CC /* test */,
-				6E8965DE2E362A5A00E8E6F6 /* api */,
 				6E8965E82E362A5A00E8E6F6 /* web */,
 				6ED3746D2D4F8535008586CC /* LICENSE */,
 				6ED374692D4F8535008586CC /* CNAME */,
