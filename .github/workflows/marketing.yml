@@ -12,6 +12,6 @@ permissions:
 
 jobs:
   deploy:
-    uses: leo-lem/leo-lem/.github/workflows/deploy-pages.yml@main
+    uses: leo-lem/leo-lem/.github/workflows/deploy.yml@main
     with:
       path: web
