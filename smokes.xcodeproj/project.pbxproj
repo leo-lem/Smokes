@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E5E44912D5BA2DE0041BE73 /* App in Frameworks */ = {isa = PBXBuildFile; productRef = 6E5E44902D5BA2DE0041BE73 /* App */; };
 		6E91322F2D523C3700E25F16 /* Smokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91322E2D523C3700E25F16 /* Smokes.swift */; };
 		6E9CE3062D5E434500D69754 /* Statistic in Frameworks */ = {isa = PBXBuildFile; productRef = 6E9CE3052D5E434500D69754 /* Statistic */; };
 		6E9CE3092D5E43ED00D69754 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 6E9CE3082D5E43ED00D69754 /* ComposableArchitecture */; };
 		6E9CE30C2D5E464F00D69754 /* Types in Frameworks */ = {isa = PBXBuildFile; productRef = 6E9CE30B2D5E464F00D69754 /* Types */; };
+		6ED8B1532F5C02F400E238D4 /* App in Frameworks */ = {isa = PBXBuildFile; productRef = 6ED8B1522F5C02F400E238D4 /* App */; };
 		6EF6A6A32D5E3E1500D3E43C /* Calculate in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF6A6A22D5E3E1500D3E43C /* Calculate */; };
 /* End PBXBuildFile section */
 
@@ -95,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E5E44912D5BA2DE0041BE73 /* App in Frameworks */,
+				6ED8B1532F5C02F400E238D4 /* App in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +164,7 @@
 			);
 			name = Smokes;
 			packageProductDependencies = (
-				6E5E44902D5BA2DE0041BE73 /* App */,
+				6ED8B1522F5C02F400E238D4 /* App */,
 			);
 			productName = xxxxx;
 			productReference = 6E48374528EC991100B67CA4 /* Smokes.app */;
@@ -220,7 +220,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1640;
+				LastUpgradeCheck = 2630;
 				TargetAttributes = {
 					6E48374428EC991100B67CA4 = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -247,6 +247,8 @@
 			packageReferences = (
 				6E136CD32D4F7E9D00800130 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 				6E9CE3072D5E43ED00D69754 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				6ED8B1512F5C02F400E238D4 /* XCLocalSwiftPackageReference "features" */,
+				6ED8B1542F5C038200E238D4 /* XCLocalSwiftPackageReference "extensions" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6E48374628EC991100B67CA4 /* Products */;
@@ -386,6 +388,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -409,7 +412,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = LeoLem.Smokes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 6.0;
@@ -488,6 +491,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -546,6 +550,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -570,7 +575,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = LeoLem.Smokes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 6.0;
@@ -595,7 +600,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = LeoLem.Smokes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 6.0;
@@ -724,6 +729,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		6ED8B1512F5C02F400E238D4 /* XCLocalSwiftPackageReference "features" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = features;
+		};
+		6ED8B1542F5C038200E238D4 /* XCLocalSwiftPackageReference "extensions" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = extensions;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		6E136CD32D4F7E9D00800130 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -749,10 +765,6 @@
 			package = 6E136CD32D4F7E9D00800130 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
 			productName = "plugin:SwiftLintBuildToolPlugin";
 		};
-		6E5E44902D5BA2DE0041BE73 /* App */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = App;
-		};
 		6E9CE3052D5E434500D69754 /* Statistic */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Statistic;
@@ -765,6 +777,10 @@
 		6E9CE30B2D5E464F00D69754 /* Types */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Types;
+		};
+		6ED8B1522F5C02F400E238D4 /* App */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = App;
 		};
 		6EF6A6A22D5E3E1500D3E43C /* Calculate */ = {
 			isa = XCSwiftPackageProductDependency;
