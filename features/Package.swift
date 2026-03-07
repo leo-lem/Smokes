@@ -32,7 +32,7 @@ let libs: [Target] = [
   .target(name: "App", dependencies: [
     tca, comps, xcstrings, "Dashboard", "History", "Statistic", "Fact", "Info", "Transfer"
   ], plugins: [lint]),
-  .target(name: "Dashboard", dependencies: [tca, ext, comps, types, calc, xcstrings], plugins: [lint]),
+  .target(name: "Dashboard", dependencies: [tca, ext, swiftuiExt, comps, types, calc, xcstrings], plugins: [lint]),
   .target(name: "History", dependencies: [tca, ext, comps, types, calc, xcstrings], plugins: [lint]),
   .target(name: "Statistic", dependencies: [tca, ext, swiftuiExt, comps, types, calc, xcstrings], plugins: [lint]),
   .target(name: "Fact", dependencies: [tca, ext, xcstrings], plugins: [lint]),
