@@ -20,14 +20,14 @@ public struct DashboardView: View {
       GridRow {
         LoadableWithDescription(
           String(localizable: .smokesLld(store.optionAmount)),
-          description: store.amountOption.rawValue
+          description: store.amountOption.label
         )
         .widgetStyle($store.amountOption)
         .popoverTip(OptionTip())
 
         LoadableWithDescription(
           store.optionTime.isFinite ? store.optionTime.formatted(.timeInterval) : String(localizable: .noData),
-          description: store.timeOption.rawValue
+          description: store.timeOption.label
         )
         .widgetStyle($store.timeOption)
       }
@@ -53,6 +53,7 @@ public struct DashboardView: View {
         .widgetStyle()
       }
     }
+    .task { store.send(.onAppear) }
     .animation(.default, value: .combine(store.optionAmount, store.optionTime))
     .onAppear { store.send(.reload) }
   }

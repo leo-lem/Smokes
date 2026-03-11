@@ -2,21 +2,23 @@
 
 import SwiftUI
 import struct Dependencies.Dependency
-import enum Types.Interval
 
 public enum AmountOption: String, CaseIterable, Sendable {
-  case yesterday, week, month, year
+  case yesterday
+  case week
+  case month
+  case year
 
-  public var rawValue: String {
+  public var label: String {
     switch self {
-    case .yesterday: String(localizable: .yesterday)
-    case .week: String(localizable: .week)
-    case .month: String(localizable: .month)
-    case .year: String(localizable: .year)
+    case .yesterday: String(localized: .yesterday)
+    case .week: String(localized: .week)
+    case .month: String(localized: .month)
+    case .year: String(localized: .year)
     }
   }
 
-  var interval: Interval {
+  public var interval: Interval {
     @Dependency(\.calendar) var cal
     @Dependency(\.date.now) var now
 
@@ -30,12 +32,13 @@ public enum AmountOption: String, CaseIterable, Sendable {
 }
 
 public enum TimeOption: String, CaseIterable, Sendable {
-  case sinceLast, longestBreak
+  case sinceLast
+  case longestBreak
 
-  public var rawValue: String {
+  public var label: String {
     switch self {
-    case .sinceLast: String(localizable: .sinceLast)
-    case .longestBreak: String(localizable: .longestBreak)
+    case .sinceLast: String(localized: .sinceLast)
+    case .longestBreak: String(localized: .longestBreak)
     }
   }
 }

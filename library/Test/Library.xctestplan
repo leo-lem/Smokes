@@ -14,7 +14,7 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:",
+        "containerPath" : "container:library",
         "identifier" : "LibraryTest",
         "name" : "LibraryTest"
       }

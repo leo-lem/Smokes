@@ -25,7 +25,8 @@ let libs: [Target] = [
   .target(name: "SwiftUIComponents", dependencies: [deps, ext, xcstrings, "Types"], plugins: [lint]),
   .target(name: "Types", dependencies: [deps, ext], plugins: [lint]),
   .target(name: "Calculate", dependencies: [deps, ext, "Types"], plugins: [lint]),
-  .target(name: "Code", dependencies: [deps], plugins: [lint])
+  .target(name: "Code", dependencies: [deps], plugins: [lint]),
+  .target(name: "Storage", dependencies: [deps, "Types"], plugins: [lint])
 ]
 
 package.targets = libs + [
