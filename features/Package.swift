@@ -25,6 +25,7 @@ let types = Target.Dependency.product(name: "Types", package: "library")
 let calc = Target.Dependency.product(name: "Calculate", package: "library")
 let code = Target.Dependency.product(name: "Code", package: "library")
 let facts = Target.Dependency.product(name: "FactsAPIClient", package: "facts")
+let storage = Target.Dependency.product(name: "Storage", package: "library")
 
 let lint = Target.PluginUsage.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")
 
@@ -32,7 +33,7 @@ let libs: [Target] = [
   .target(name: "App", dependencies: [
     tca, comps, xcstrings, "Dashboard", "History", "Statistic", "Fact", "Info", "Transfer"
   ], plugins: [lint]),
-  .target(name: "Dashboard", dependencies: [tca, ext, swiftuiExt, comps, types, calc, xcstrings], plugins: [lint]),
+  .target(name: "Dashboard", dependencies: [tca, ext, swiftuiExt, comps, types, calc, storage, xcstrings], plugins: [lint]),
   .target(name: "History", dependencies: [tca, ext, comps, types, calc, xcstrings], plugins: [lint]),
   .target(name: "Statistic", dependencies: [tca, ext, swiftuiExt, comps, types, calc, xcstrings], plugins: [lint]),
   .target(name: "Fact", dependencies: [tca, ext, xcstrings], plugins: [lint]),

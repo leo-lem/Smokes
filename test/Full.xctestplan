@@ -25,18 +25,18 @@
       }
     },
     {
+      "target" : {
+        "containerPath" : "container:smokes.xcodeproj",
+        "identifier" : "6EF6A6942D5E3BB300D3E43C",
+        "name" : "SmokesPerformanceTests"
+      }
+    },
+    {
       "parallelizable" : true,
       "target" : {
         "containerPath" : "container:smokes.xcodeproj",
         "identifier" : "6ED91E1F293FB7BB00728E2B",
         "name" : "SmokesUITests"
-      }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:smokes.xcodeproj",
-        "identifier" : "6EF6A6942D5E3BB300D3E43C",
-        "name" : "SmokesPerformanceTests"
       }
     },
     {
