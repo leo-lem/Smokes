@@ -4,41 +4,37 @@
 [![Get Beta Access](https://img.shields.io/badge/TestFlight-Beta_Access-007AFF?logo=apple)](https://testflight.apple.com/join/juBfGq97)
 [![App Store Connect](https://img.shields.io/badge/App%20Store%20Connect-Dashboard-green?logo=apple)](https://appstoreconnect.apple.com/apps/6446227741/distribution)
 
-**Smokes** is a lightweight, privacy-first iOS app to help you track your smoking habits and reflect on your behavior. Whether you're cutting back or building awareness, Smokes helps you log and review your consumption patterns with a clean, focused interface — and all data stays securely on your device.
+Smokes is a lightweight iOS app for tracking smoking habits with as little friction as possible. It helps you log entries quickly, review patterns over time, and export your data when you need it. The app stays focused, private, and fast.
 
-## ✨ Features
+## What it does
 
-- 🌀 One-tap logging
-- 📊 Rich daily, weekly, and monthly charts
-- 🌓 Native dark mode support
-- 📤 Local data export
-- ⚙️ Lightweight, on-device-only architecture
-- 🧪 Comprehensive test coverage with Swift Testing
-- 🎓 Daily motivational facts (via serverless API)
+- One tap logging
+- Daily, weekly, and monthly charts
+- Local data export
+- Daily facts
+- Home screen widget for quick logging
+- Native dark mode support
 
-## 🧱 Architecture
+## Architecture
 
-Smokes is designed with simplicity and reliability in mind:
+Smokes is built to stay simple and reliable:
 
-- **Composable Architecture** for modular, testable state management
-- **SwiftUI** throughout
-- **Charts API** for efficient and responsive visualizations
-- **Swift Testing framework** for unit and performance tests
-- Clear separation of concerns between state, UI, and dependencies
+- SwiftUI throughout
+- Composable Architecture for modular state management
+- Clear separation between UI, state, and dependencies
+- Swift Testing for unit and performance tests
 
-## 🔧 Tech Stack
+## Tech Stack
 
-- **SwiftUI** + **Composable Architecture**
-- **Charts** for native data visualizations
-- **Swift Testing** for comprehensive test coverage
-- **Vercel Serverless Function** for fact delivery
+- SwiftUI
+- Composable Architecture
+- Charts
+- Swift Testing
+- Vercel Serverless Function for fact delivery
 
-## 🛠 Setup
+## Setup
 
-1. Clone the repo.
-2. Open `Smokes.xcodeproj` in Xcode.
-3. Run on a device (iOS 18+ recommended).
-
----
-
-Made with care by [@Leo‑Lem](https://github.com/leo-lem) — passionate about clean code, thoughtful UX, and indie dev.
+1. Clone the repo
+2. Open `Smokes.xcodeproj` in Xcode
+3. Run on a device or simulator
+4. iOS 18+ recommended
