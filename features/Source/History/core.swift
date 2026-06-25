@@ -4,6 +4,7 @@ import Calculate
 import ComposableArchitecture
 import Extensions
 import Foundation
+import Storage
 import Types
 
 @Reducer public struct History {
@@ -20,7 +21,7 @@ import Types
       selection: Date = Dependency(\.date.now).wrappedValue - 86400,
       editing: Bool = false
     ) {
-      _entries = Shared(wrappedValue: entries, .fileStorage(.documentsDirectory.appending(path: "entries.json")))
+      _entries = Shared(wrappedValue: entries, .fileStorage(AppGroup.containerURL.appending(path: "entries.json")))
       _option = Shared(wrappedValue: option, .appStorage("history_option"))
       self.selection = selection
       self.editing = editing

@@ -22,7 +22,7 @@ public struct HistoryView: View {
 
       GridRow {
         LoadableWithDescription(String(localizable: .smokesLld(store.optionAmount)), description: store.option.rawValue)
-          .widgetStyle($store.option)
+          .widgetStyle(Binding(store.$option))
 
         LoadableWithDescription(
           store.untilHereAmount.flatMap{String(localizable: .smokesLld($0))},

@@ -6,7 +6,6 @@ import Testing
 import Types
 
 @testable import Dashboard
-@testable import Storage
 
 @MainActor
 struct DashboardTest {
@@ -18,23 +17,10 @@ struct DashboardTest {
       reducer: Dashboard.init
     ) { deps in
       deps.date.now = now
-      deps.storage = Storage(
-        loadEntries: { Dates() },
-        saveEntries: { _ in },
-        loadAmountOption: { .week },
-        saveAmountOption: { _ in },
-        loadTimeOption: { .sinceLast },
-        saveTimeOption: { _ in },
-        addEntry: { Dates([$0]) },
-        removeNearestEntry: { _ in Dates() }
-      )
     }
 
-    await store.send(.addButtonTapped)
-    await store.receive(\.loaded) {
-      $0.entries = Dates([now])
-      $0.amountOption = .week
-      $0.timeOption = .sinceLast
+    await store.send(.addButtonTapped) {
+      $0.$entries.withLock { $0 = Dates([now]) }
     }
   }
 
@@ -48,23 +34,11 @@ struct DashboardTest {
       reducer: Dashboard.init
     ) { deps in
       deps.date.now = next
-      deps.storage = Storage(
-        loadEntries: { Dates([now, next]) },
-        saveEntries: { _ in },
-        loadAmountOption: { .week },
-        saveAmountOption: { _ in },
-        loadTimeOption: { .sinceLast },
-        saveTimeOption: { _ in },
-        addEntry: { _ in Dates([now, next]) },
-        removeNearestEntry: { _ in Dates([now]) }
-      )
+      deps.calendar = .current
     }
 
-    await store.send(.removeButtonTapped)
-    await store.receive(\.loaded) {
-      $0.entries = Dates([now])
-      $0.amountOption = .week
-      $0.timeOption = .sinceLast
+    await store.send(.removeButtonTapped) {
+      $0.$entries.withLock { $0 = Dates([now]) }
     }
   }
 
@@ -79,7 +53,6 @@ struct DashboardTest {
       deps.calculate.amount = { _, _ in 1 }
       deps.calculate.break = { _, _ in 1 }
       deps.calculate.longestBreak = { _, _ in 1 }
-      deps.storage = .previewValue
     }
     
     withDependencies {
@@ -93,34 +66,6 @@ struct DashboardTest {
       #expect(store.state.untilHereAmount == 1)
       #expect(store.state.optionAmount == 1)
       #expect(store.state.optionTime == 1)
-    }
-  }
-
-  @Test
-  func loadingOnAppear() async throws {
-    let now = Date.now
-
-    let store = TestStore(
-      initialState: Dashboard.State(now: now),
-      reducer: Dashboard.init
-    ) { deps in
-      deps.storage = Storage(
-        loadEntries: { Dates([now]) },
-        saveEntries: { _ in },
-        loadAmountOption: { .month },
-        saveAmountOption: { _ in },
-        loadTimeOption: { .longestBreak },
-        saveTimeOption: { _ in },
-        addEntry: { _ in Dates() },
-        removeNearestEntry: { _ in Dates() }
-      )
-    }
-
-    await store.send(.onAppear)
-    await store.receive(\.loaded) {
-      $0.entries = Dates([now])
-      $0.amountOption = .month
-      $0.timeOption = .longestBreak
     }
   }
 }
