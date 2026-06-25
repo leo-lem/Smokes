@@ -15,7 +15,7 @@ public struct StatisticView: View {
         store.optionAverage.flatMap{String(localizable: $0.isFinite ? .smokes($0.formatted(.average)) : .noData)},
         description: store.option.rawValue
       )
-      .widgetStyle($store.option, enabled: store.enabledOptions)
+      .widgetStyle(Binding(store.$option), enabled: store.enabledOptions)
 
       LoadableWithDescription(
         store.optionPlotData?
@@ -25,7 +25,7 @@ public struct StatisticView: View {
       ) {
         AmountsChart($0)
       }
-      .widgetStyle($store.plotOption, enabled: store.enabledPlotOptions)
+      .widgetStyle(Binding(store.$plotOption), enabled: store.enabledPlotOptions)
       .gridCellColumns(2)
 
       GridRow {
@@ -48,7 +48,7 @@ public struct StatisticView: View {
         }
       }
 
-      IntervalPicker(selection: $store.selection, bounds: store.bounds)
+      IntervalPicker(selection: Binding(store.$selection), bounds: store.bounds)
         .labelStyle(.iconOnly)
         .buttonStyle(.borderedProminent)
         .widgetStyle()

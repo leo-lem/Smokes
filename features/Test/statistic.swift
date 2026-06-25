@@ -20,10 +20,8 @@ struct StatisticTest {
     await withDependencies {
       $0.calendar = .current
     } operation: {
-      await store.send(\.binding.selection, Interval.month(.distantPast)) {
+      await store.send(.binding(.set(\.$selection, .init(value: .month(.distantPast))))) {
         $0.$selection.withLock { $0 = .month(.distantPast) }
-      }
-      store.assert {
         $0.$option.withLock { $0 = .perday }
         $0.$plotOption.withLock { $0 = .byday }
       }
