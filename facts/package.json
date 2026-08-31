@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@vercel/node": "^5.0.0"
+    "@vercel/node": "^9.0.1"
   },
   "devDependencies": {
     "typescript": "^7.0.2"
