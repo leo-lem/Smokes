@@ -39,7 +39,7 @@ public struct TransferView: View {
           .overlay(content: ProgressView.init)
         }
 
-        Picker(.localizable(.pickFormat), selection: $store.encoding) {
+        Picker(.localizable(.pickFormat), selection: Binding(store.$encoding)) {
           ForEach(Encoding.allCases, id: \.self) { encoding in
             Text(encoding.title)
           }

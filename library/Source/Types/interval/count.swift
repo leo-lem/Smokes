@@ -1,8 +1,8 @@
 // Created by Leopold Lemmermann on 02.04.23.
 
 import struct Dependencies.Dependency
-import struct Foundation.Date
 import struct Foundation.Calendar
+import struct Foundation.Date
 
 public extension Interval {
   var isCountable: Bool {

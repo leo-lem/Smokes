@@ -1,7 +1,7 @@
 // Created by Leopold Lemmermann on 01.04.23.
 
-import SwiftUI
 import struct Dependencies.Dependency
+import SwiftUI
 
 public enum AmountOption: String, CaseIterable, Sendable {
   case yesterday

@@ -1,10 +1,10 @@
 // Created by Leopold Lemmermann on 29.04.23.
 
-import struct Foundation.Date
-import struct Foundation.Calendar
-import struct Foundation.TimeInterval
-import Extensions
 import struct Dependencies.Dependency
+import Extensions
+import struct Foundation.Calendar
+import struct Foundation.Date
+import struct Foundation.TimeInterval
 
 public extension Interval {
   var start: Date? {

@@ -1,7 +1,7 @@
 // Created by Leopold Lemmermann on 29.04.23.
 
-import struct Foundation.Date
 import Extensions
+import struct Foundation.Date
 import Types
 
 extension Calculate {

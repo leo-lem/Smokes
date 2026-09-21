@@ -3,6 +3,7 @@
 import Calculate
 import ComposableArchitecture
 import Foundation
+import Storage
 import Types
 
 @Reducer public struct Statistic {
@@ -18,7 +19,7 @@ import Types
       option: StatisticOption = .perday,
       plotOption: PlotOption = .byyear
     ) {
-      _entries = Shared(wrappedValue: entries, .fileStorage(.documentsDirectory.appending(path: "entries.json")))
+      _entries = Shared(wrappedValue: entries, .fileStorage(AppGroup.containerURL.appending(path: "entries.json")))
       _selection = Shared(wrappedValue: selection, .fileStorage(.documentsDirectory.appending(path: "stats_selection")))
       _option = Shared(wrappedValue: option, .appStorage("stats_option"))
       _plotOption = Shared(wrappedValue: plotOption, .appStorage("stats_plotOption"))
@@ -31,29 +32,25 @@ import Types
 
   public var body: some Reducer<State, Action> {
     BindingReducer()
-      .onChange(of: \.selection) { _, new in
-        Reduce { state, action in
-          if case .binding(\.selection) = action {
-            return .run { [state] _ in
-              if !StatisticOption.enabledCases(new).contains(state.option) {
-                guard let option = StatisticOption.enabledCases(new).first else {
-                  return assert(false, "no enabled option")
-                }
-                state.$option.withLock { $0 = option }
-              }
-              
-              if !PlotOption.enabledCases(new).contains(state.plotOption) {
-                guard let option = PlotOption.enabledCases(new).first else {
-                  return assert(false, "no enabled plot option")
-                }
-                state.$plotOption.withLock { $0 = option }
-              }
-            }
+    Reduce { state, action in
+      if case .binding(\.$selection) = action {
+        if !StatisticOption.enabledCases(state.selection).contains(state.option) {
+          guard let option = StatisticOption.enabledCases(state.selection).first else {
+            assert(false, "no enabled option")
+            return .none
           }
-
-          return .none
+          state.$option.withLock { $0 = option }
+        }
+        if !PlotOption.enabledCases(state.selection).contains(state.plotOption) {
+          guard let option = PlotOption.enabledCases(state.selection).first else {
+            assert(false, "no enabled plot option")
+            return .none
+          }
+          state.$plotOption.withLock { $0 = option }
         }
       }
+      return .none
+    }
   }
 
   public init() {}

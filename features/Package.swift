@@ -30,15 +30,27 @@ let storage = Target.Dependency.product(name: "Storage", package: "library")
 let lint = Target.PluginUsage.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")
 
 let libs: [Target] = [
-  .target(name: "App", dependencies: [
-    tca, comps, xcstrings, "Dashboard", "History", "Statistic", "Fact", "Info", "Transfer"
-  ], plugins: [lint]),
-  .target(name: "Dashboard", dependencies: [tca, ext, swiftuiExt, comps, types, calc, storage, xcstrings], plugins: [lint]),
-  .target(name: "History", dependencies: [tca, ext, comps, types, calc, xcstrings], plugins: [lint]),
-  .target(name: "Statistic", dependencies: [tca, ext, swiftuiExt, comps, types, calc, xcstrings], plugins: [lint]),
-  .target(name: "Fact", dependencies: [tca, ext, xcstrings], plugins: [lint]),
-  .target(name: "Info", dependencies: [tca, ext, swiftuiExt, xcstrings], plugins: [lint]),
-  .target(name: "Transfer", dependencies: [tca, ext, swiftuiExt, comps, types, code, xcstrings], plugins: [lint]),
+  .target(name: "App",
+          dependencies: [tca, comps, xcstrings, "Dashboard", "History", "Statistic", "Fact", "Info", "Transfer"],
+          plugins: [lint]),
+  .target(name: "Dashboard",
+          dependencies: [tca, ext, swiftuiExt, comps, types, calc, storage, xcstrings],
+          plugins: [lint]),
+  .target(name: "History",
+          dependencies: [tca, ext, comps, types, calc, storage, xcstrings],
+          plugins: [lint]),
+  .target(name: "Statistic",
+          dependencies: [tca, ext, swiftuiExt, comps, types, calc, storage, xcstrings],
+          plugins: [lint]),
+  .target(name: "Fact",
+          dependencies: [tca, ext, xcstrings],
+          plugins: [lint]),
+  .target(name: "Info",
+          dependencies: [tca, ext, swiftuiExt, xcstrings],
+          plugins: [lint]),
+  .target(name: "Transfer",
+          dependencies: [tca, ext, swiftuiExt, comps, types, code, storage, xcstrings],
+          plugins: [lint]),
 ]
 
 package.targets = libs + [

@@ -1,7 +1,7 @@
 // Created by Leopold Lemmermann on 02.02.25.
 
-import Foundation
 import struct Dependencies.Dependency
+import Foundation
 
 public struct Dates: Equatable, Codable, Sendable {
   public internal(set) var array: ArrayType

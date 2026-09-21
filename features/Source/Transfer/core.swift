@@ -2,8 +2,9 @@
 
 import Code
 import ComposableArchitecture
-import Foundation
 import struct Extensions.DataFile
+import Foundation
+import Storage
 import Types
 
 @Reducer
@@ -26,7 +27,7 @@ public struct Transfer {
       preview: String? = nil,
       file: DataFile? = nil
     ) {
-      _entries = Shared(wrappedValue: entries, .fileStorage(.documentsDirectory.appending(path: "entries.json")))
+      _entries = Shared(wrappedValue: entries, .fileStorage(AppGroup.containerURL.appending(path: "entries.json")))
       _encoding = Shared(wrappedValue: encoding, .appStorage("transfer_encoding"))
       self.alert = alert
       self.importing = importing
@@ -144,7 +145,7 @@ public struct Transfer {
             return .send(.failure(String(localizable: .error)))
           }
 
-        case .binding(\.encoding):
+        case .binding(\.$encoding):
           return .send(.select(state.encoding))
 
         case .binding: break

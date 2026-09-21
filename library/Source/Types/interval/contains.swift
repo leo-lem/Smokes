@@ -1,7 +1,7 @@
 // Created by Leopold Lemmermann on 29.04.23.
 
-import struct Foundation.Date
 import struct Dependencies.Dependency
+import struct Foundation.Date
 
 public extension Interval {
   func contains(_ date: Date) -> Bool {
